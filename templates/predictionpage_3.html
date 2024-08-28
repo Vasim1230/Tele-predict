@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Telecom Customer Churn Prediction</title>
+  <style type="text/css">
+    h1 {
+      font-size: 60px;
+      text-align: center;
+      color: #e32037;
+      border: 5px solid black;
+      font-family: 'Impact';
+    }
+
+    body {
+      background-size: cover;
+      
+    }
+
+    legend {
+      font-size: 24px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+
+    .note {
+      color: #000000;
+      font-weight: 400;
+      font-size: 18px;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: #fef9f9;">
+
+  <div class="jumbotron" style="background-color: rgb(173, 210, 218);">
+    <h1 class="display-4" style="font-family: Arial, Helvetica, sans-serif;font-weight: 300;">
+      <bold>TELECOM CUSTOMER CHURN PREDICTION</bold>
+    </h1>
+    <p class="lead" style="font-family: Arial, Helvetica, sans-serif;font-weight: 20px;">ENTER THE VALUES TO KNOW THE
+      CHANCES OF CUSTOMER CHURN STATUS</p>
+    <hr class="my-4">
+    <p style="font-family: Arial, Helvetica, sans-serif;font-weight: 250px;"> LET'S PREDICT !</p>
+    <p class="lead">
+    <form method="POST" , action="{{url_for('home')}}">
+      <fieldset>
+        <br>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Senior Citizen</span>
+          </div>
+          <input type="number" name="SeniorCitizen" min="0" max="1" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Partner</span>
+          </div>
+          <input type="number" name="Partner" min="0" max="1" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Dependents</span>
+          </div>
+          <input type="number" name="Dependents" min="0" max="1" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Tenure value</span>
+          </div>
+          <input type="number" name="tenure" min="0" max="100" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Online Security</span>
+          </div>
+          <input type="number" name="OnlineSecurity" min="0" max="2" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Online Backup</span>
+          </div>
+          <input type="number" name="OnlineBackup" min="0" max="2" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Device Protection</span>
+          </div>
+          <input type="number" name="DeviceProtection" min="0" max="2" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Tech Support</span>
+          </div>
+          <input type="number" name="TechSupport" min="0" max="2" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Contract</span>
+          </div>
+          <input type="number" name="Contract" min="0" max="2" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Paperless Billing</span>
+          </div>
+          <input type="number" name="PaperlessBilling" min="0" max="1" class="form-control" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Monthly Charges</span>
+          </div>
+          <input type="text" inputmode="decimal" name="MonthlyCharges" min="0" max="1000" class="form-control"
+            aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Total Charges</span>
+          </div>
+          <input type="text" inputmode="decimal" name="TotalCharges" min="0" max="1000" class="form-control"
+            aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+
+
+
+
+
+
+        <input type="submit" value="PREDICT" class="btn btn-primary">
+        <a href="{{ url_for('home')}}"></a>
+
+        <span class="psw" style="float: right;
+                padding-top: 16px; color: black;"><a href="{{url_for('man')}}" style="color: black;font-size: 18px;font-weight: 400;">Refresh</a></span>
+
+      </fieldset>
+    </form>
+    </br>
+    </br>
+    </br>
+    <fieldset >
+      <legend>REFERENCE</legend></br>
+
+      <div class="note">
+      
+      1.  For Online Security: 0 for NO ,1 for No internet service and 2 for YES<br>
+
+      2.  For Online Backup: 0 for NO ,1 for No internet service and 2 for YES<br>
+
+      3.  For Device Protection: 0 for NO ,1 for No internet service and 2 for YES<br>
+
+      4. For Tech Support: 0 for NO , 1 for No internet service and 2 for YES<br>
+      
+      5. For Contract: 0 for month-to-month, 1 for one year and 2 for two year<br>
+
+      
+    </div>
+
+    </fieldset>
+
+    </p>
+  </div>
+
+</body>
+
+</html>

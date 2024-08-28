@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tele - Predict</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            margin-right: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 0;
+            height: 60px;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 180px;
+            height: 60px;
+            display: flex;
+            background-color: white;
+
+        }
+
+        .logo1 {
+            width: 50px;
+            height: 60px;
+
+        }
+
+        .textlogo {
+            width: 140px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            border-radius: 20%;
+            margin-left: -5%;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        ul li {
+            margin-right: 20px;
+            justify-content: space-between;
+
+        }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        ul li a:hover {
+            color: #75d0e3;
+        }
+
+        .login-btn1 {
+            background-color: #c8ff00;
+            color: #040404;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 5%;
+            width: 100px;
+            height: 30px;
+            font-size: 18px;
+
+
+
+        }
+
+
+        .main-content {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            background-color: rgb(173, 210, 218);
+        }
+
+        .login-section {
+            flex: 1;
+            width: 100%;
+
+        }
+
+        .login-section-btn {
+            align-items: center;
+            justify-content: center;
+            flex: 0;
+            display: flex;
+            animation-delay: 1s;
+        }
+
+        .login-btn2 {
+            align-items: center;
+            justify-content: center;
+            background-color: #abacaa;
+            color: #040404;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 5%;
+            width: 160px;
+            height: 40px;
+            font-size: 18px;
+            animation-delay: 1s;
+
+        }
+
+        a.anime {
+            animation-delay: 1s;
+        }
+
+        .login-btn1:hover {
+            background-color: #040404;
+            color: azure;
+        }
+
+        .login-btn2:hover {
+            background-color: #040404;
+            color: azure;
+        }
+
+
+        .image-section {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            width: 55%;
+            margin-left: -5%;
+        }
+
+        .img-section globe {
+
+            max-width: 20%;
+            height: auto;
+            width: 18%;
+            margin-left: 10%;
+        }
+
+        .globe.anime {
+            animation-delay: 1.5s;
+
+        }
+
+        .tower.anime {
+            animation-delay: 1.2s;
+        }
+
+        .tower {
+
+            width: 26%;
+            margin-top: -10%;
+            margin-left: -27%;
+            margin-right: 5%;
+            margin-bottom: -10%;
+            height: 200px;
+
+        }
+
+        .anime {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: moveup 0.5s linear forwards;
+        }
+
+        @keyframes moveup {
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .nav-links .menu-imp {
+            background-color: #fef8f8;
+            width: 60%;
+            top: 65px;
+            line-height: 100%;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .nav-links .menu-service {
+            background-color: #fef8f8;
+            width: 10%;
+            top: 65px;
+            line-height: 5100%;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .nav-links .menu-about {
+            background-color: #fef8f8;
+            width: 40%;
+            top: 65px;
+            line-height: 100%;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .nav-links li:hover .menu-imp {
+            top: 65px;
+            
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .nav-links li:hover .menu-service {
+            top: 65px;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .nav-links li:hover .menu-about {
+            top: 65px;
+            
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{url_for('static',filename='/img/logo1.png')}}" class="logo1" />
+                <img src="{{url_for('static',filename='/img/textlogo.png')}}" class="textlogo" />
+            </div>
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#">Importance</a>
+                    <div class="menu-imp">
+                        <p style="color: #040404;font-weight: 600;text-align: center;">
+                             Helps in developing proactive Customer Retention stategies <br> <br>
+                             Enhanced Cost Reduction for the telecom-service providers<br><br>
+                             Productive customized Marketing Strategies <br><br>
+                             Efficient Competitive Advantage in Tele-Industry <br><br>
+                             Maintain Long-Term Customer Relationships<br><br>
+                        </p>
+                    </div>
+                </li>
+
+                <li><a href="#">Our Service</a>
+                <div class="menu-imp" style="width: 52%;">
+                    <p style="color: #040404; font-weight: 600;text-align: center;">
+                         Tele - predict provides a platform to check the customer
+                         churn status with the desired parameter information entered
+                         by the user. <br><br>
+                         This website gets input from the user for the 
+                         features and predicts the churn status of the customer using
+                         the enhanced prediction system. <br><br>
+                         Our system is known for its enhanced prediction accuracy.<br><br>
+                    </p>
+                </div>
+            </li>
+                <li><a href="#">About us</a>
+                    <div class="menu-imp" style="width: 44%;">
+                        <p style="color: #040404; font-weight: 600;text-align: center;">
+                             OUR VISION<br><br>
+                             At Tele - Predict, we envision to empower the telecom industry by predicting 
+                             the customer churn status effectively and accurately using advanced prediction 
+                             system technology.  <br><br>
+                             OUR MOTIVATION<br><br>
+                             Acquiring new customers is a tedious task when compared to retention of customers
+                             that has a significant revenue growth and cost reduction. <br><br>
+                             OUR AIM <br><br>
+                             We focus on building effective prediction system that takes forward to analyze
+                             customer retention strategies and insights.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <a href="{{url_for('login')}}" class="login-btn1"><button class="login-btn1">Login</button></a>
+        </nav>
+    </header>
+
+    <section class="main-content"><br>
+        <div class="login-section">
+            <h1 class="anime" style="font-weight: bolder;font-size: 48px;animation-delay: 0.5s;">Telecom<br>Customer
+                Churn Prediction</h1>
+            <p class="anime" style="font-weight: 300;font-size:18px;color:rgb(12, 12, 62);animation-delay: 0.6s;">TELE -
+                PREDICT is an Online Customer Churn Prediction System <br>for the Telecom sector</p>
+            <h3 class="anime" style="font-weight: bold;font-size: 24px;animation-delay: 0.9s;color: #424343;">A platform
+                to predict customer churn status</h3><br>
+            <div class="login-section-btn anime">
+                <a href="{{url_for('login')}}" class="login-btn2 anime"><button class="login-btn2 anime">LET'S
+                        PREDICT</button></a>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="{{url_for('static',filename='/img/globe.png')}}" alt="Tele - Globe" class="globe anime" /><br><br>
+            <img src="{{url_for('static',filename='/img/tower.png')}}" alt="Signal Tower" class="tower anime" />
+        </div>
+    </section>
+</body>
+
+</html>

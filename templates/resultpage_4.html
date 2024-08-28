@@ -1,0 +1,258 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: rgb(173, 210, 218);;">
+
+  <center>
+
+    <div class="jumbotron">
+      <h1 class="display-4" style="font-family: Arial, Helvetica, sans-serif;font-weight: 700; color: rgb(96, 155, 168);">
+        <bold>RESULT</bold>
+      </h1>
+      <hr class="my-4">
+      {% if data == 0 %}
+      <h2 style="color: rgb(47, 132, 48);font-size:60px;">Great !!!</h2>
+      <h3 style="font-size: 48px;">Likely have Less chances of getting churned</h3>
+      {% if data11 <= '1' %}
+      <h2 style="color: ORANGE; ">Not a valid customer</h2>
+      {% else %}
+      <h2 style="color: black; font-size: 45px;">{{result}}</h2>
+      {% endif %}
+      {% else %}
+      <h2 style="color: red;font-size: 60px;">Oh No !!!</h2>
+      <h3 style="font-size: 48px;">Likely have More chances of getting churned</h3>
+      {% endif %}
+      
+      
+      
+      
+
+      
+
+
+
+
+
+
+      <br><br>
+      <a href="{{ url_for('man')}}">Go back to home page</a>
+      <br><br>
+
+      <p class="lead">
+
+      </p>
+    </div>
+
+  </center>
+
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Information</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Senior Citizen</td>
+        <td>
+          {% if data1 =='0' %}
+          {% set data1_new = 'NO' %}
+          {% elif data1 == '1' %}
+          {% set data1_new = 'YES' %}
+          {% else %}
+          {% set data1_new = 'Not a valid response' %}
+          {% endif %}
+
+          {{ data1_new }}
+
+        </td>
+
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Partner</td>
+
+        <td>
+          {% if data2 =='0' %}
+          {% set data2_new = 'NO' %}
+          {% elif data2 == '1' %}
+          {% set data2_new = 'YES' %}
+
+          {% else %}
+          {% set data2_new = 'Not a valid response' %}
+          {% endif %}
+
+          {{ data2_new }}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Dependents</td>
+        <td>
+          {% if data3 =='0' %}
+          {% set data3_new = 'NO' %}
+          {% elif data3 == '1' %}
+          {% set data3_new = 'YES' %}
+          {% else %}
+          {% set data3_new = 'Not a valid response' %}
+          {% endif %}
+
+          {{ data3_new }}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Tenure value</td>
+        <td>{{data4}}</td>
+
+      <tr>
+        <th scope="row">5</th>
+        <td>Online Security</td>
+        <td>
+          {% if data5 =='0' %}
+          {% set data5_new = 'NO' %}
+          {% elif data5 == '1' %}
+          {% set data5_new = 'No internet service' %}
+          {% elif data5 == '2' %}
+          {% set data5_new = 'YES' %}
+
+
+          {% else %}
+          {% set data5_new = 'Not a valid response' %}
+          {% endif %}
+
+          {{ data5_new }}
+        </td>
+
+      </tr>
+
+      <tr>
+        <th scope="row">6</th>
+        <td>Online Backup</td>
+
+        <td>
+          {% if data6 =='0' %}
+          {% set data6_new = 'NO' %}
+          {% elif data6 == '1' %}
+          {% set data6_new = 'No internet Service' %}
+          {% elif data6 == '2' %}
+          {% set data6_new = 'YES' %}
+          {% else %}
+          {% set data6_new = 'Not a valid response' %}
+          {% endif %}
+
+          {{ data6_new }}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>Device Protection</td>
+        <td>
+          {% if data7 =='0' %}
+          {% set data7_new = 'NO' %}
+          {% elif data7 == '1' %}
+          {% set data7_new = 'No internet service' %}
+          {% elif data7 == '2' %}
+          {% set data7_new = 'YES' %}
+          {% else %}
+          {% set data7_new = 'Not a valid response' %}
+          {% endif %}
+
+          {{ data7_new }}
+        </td>
+
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>Tech Support</td>
+
+        <td>
+          {% if data8 =='0' %}
+          {% set data8_new = 'NO' %}
+          {% elif data8 == '1' %}
+          {% set data8_new = 'No internet Service' %}
+          {% elif data8 == '2' %}
+          {% set data8_new = 'YES' %}
+          {% else %}
+          {% set data8_new = 'Not a valid response' %}
+          {% endif %}
+
+          {{ data8_new }}
+        </td>
+
+
+
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>Contract</td>
+        <td>
+          {% if data9 =='0' %}
+          {% set data9_new = 'Month-to-Month' %}
+          {% elif data9 == '1' %}
+          {% set data9_new = 'One year' %}
+          {% elif data9 == '2' %}
+          {% set data9_new = 'Two year' %}
+          {% else %}
+          {% set data9_new = 'Not a valid response' %}
+          {% endif %}
+
+          {{ data9_new }}
+        </td>
+
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>Paperless Billing</td>
+        <td>
+          {% if data10 =='0' %}
+          {% set data10_new = 'NO' %}
+          {% elif data10 == '1' %}
+          {% set data10_new = 'YES' %}
+          {% else %}
+          {% set data10_new = 'Not a valid response' %}
+          {% endif %}
+
+          {{ data10_new }}
+
+        </td>
+
+      </tr>
+
+      <tr>
+        <th scope="row">11</th>
+        <td>Monthly Charges</td>
+        <td>{{ data11 }}</td>
+      </tr>
+
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td>Total Charges</td>
+        <td>{{data12}}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+</body>
+
+</html>

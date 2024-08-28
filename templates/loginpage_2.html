@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title> Login </title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body style="background-color: rgb(173, 210, 218);"></br>
+
+  <form action="{{url_for('login')}}" method="post">
+    <div class="imgcontainer">
+      <img src="{{url_for('static', filename='/img/ang.png')}}" class="avatar" />
+    </div>
+
+    <div class="container">
+      <label for="username"><b>USERNAME</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="psw"><b>PASSWORD</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      <div class="log">
+        <a href="{{url_for('man')}}" class="submit">LOGIN </a>
+      </div>
+
+
+      </br>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button a href="{{url_for('login')}}" class="cancelbtn" style="color: white;"> Cancel </a></button>
+      <a href="#" style="color: black;font-size: 20px;float: right;">About us</a>
+      </br></br><span class="psw" style="float: right;text-align: right;justify-items: right;"></span>
+    </div>
+  </form>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="flash-messages">
+    {% for message in messages %}
+    <div class="flash-{{ message[1] }}">{{ message[0] }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endwith %}
+  </div>
+</body>
+
+</html>
